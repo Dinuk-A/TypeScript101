@@ -1,0 +1,29 @@
+install> npm i -g typescript
+check version with ts compilor> tsc -v
+
+create new folder, add index.ts file manually
+
+TS a super set of JS, any JS code is valid inside TS files
+
+to run a ts file >>> tsc index.ts >> this will create a index.js in same folder
+
+********configure TS compiler********
+crete a config file> tsc --init
+change  "target": "esnext",  >     "target": "ES2016",
+uncomment  "rootDir": "./src" and create a new src folder in root , move index.ts to it
+uncomment > "outDir": "./dist", (js files will be saved here)
+add > "removeComments": true, >>> comments on ts file wont go to js file
+ "noEmitOnError": true, >>> if errors in ts = dont compile to js
+
+with these settings we can compile all ts files without any args in cmd > tsc
+
+********debug********
+1.enable "sourceMap": true, on config file
+2.click in line number of vs code to add a break point, so when start debugging the execution stops right in that line and
+we can go line by line from there
+3.go to debug panel and click "crete a launch.json file"
+4.select nodejs
+5. add "preLaunchTask": "tsc: build - tsconfig.json", === to use ts compiler using the config file to build our app
+6. go to index.ts and go to debug panel and click launch program
+
+******** TS types ********
