@@ -1,0 +1,26 @@
+Typescript is a programming lang that adds TYPES to JS
+arrow fns, classes were in TS before comes to JS
+TS code are written in .ts files
+TS transpiler converts TS code to JS code. if the TS code can be converted into a JS, it will output a .js file
+TS is a superset of JS
+
+TS recognizes JS's built in primitive types
+* string
+* number
+* boolean
+* null
+* undefined
+
+when a TS variable is declared without an initial value, we can always give any type of new values if we need
+let var1; 
+var1 = 'hello'; // valid
+var1 = 1; // valid
+
+but if a variable is initialized with a value, its type is inferred from that value, and we cannot assign values of other types to that variable
+let var2 = 'hello';
+var2 = 1; // invalid
+
+if we needed a variable to be a specific type but not assign a value at first, use type annotation
+let mustBeAString: string;
+let must_number: number;
+let willBeBoolean: boolean;
