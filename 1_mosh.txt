@@ -5,7 +5,7 @@ create new folder, add index.ts file manually
 
 TS a super set of JS, any JS code is valid inside TS files
 
-to run a ts file >>> tsc index.ts >> this will create a index.js in same folder
+to run a ts file >>> tsc index.ts >> this will create a index.js in same folder >> then node index.js to run it
 
 ********configure TS compiler********
 crete a config file> tsc --init
