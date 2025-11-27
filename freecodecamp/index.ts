@@ -113,3 +113,14 @@ function fetchUserData(givenUN: string): User {
     }
     return foundUser;
 }
+
+//any type ✅
+let notGoodWay: any = 55;
+notGoodWay = "now a string"
+//similar as turning off typescript for that variable, not recommended
+
+//void return type ✅
+function logMessage(msg: string): void {
+    console.log("Log msg: " + msg);
+    //no return value
+}
