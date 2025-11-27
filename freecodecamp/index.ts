@@ -90,3 +90,9 @@ let myName4: "bob" = "bob";   //now this MUST have a value of "bob", cant even c
 //unions ✅
 type UserRole = "guest" | "admin" | "moderator";  //can only have one of these 3 values
 let userRole: UserRole = "admin";   //this never can be any other value except these 3
+
+//type narrowing ✅
+type empCode = string | number;  //can be string or number
+let empId: empCode = 12345;
+let empId2: empCode = "A1234";
+//this is useful with keyword 'typeof' to check the type at runtime
