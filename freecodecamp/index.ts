@@ -56,8 +56,8 @@ type Animal = {
     wings?: number
 }
 
-let an1 = {name:"cow",legs:4};
-let an2 = {name:"parrot",legs:2,wings:2}
+let an1 = { name: "cow", legs: 4 };
+let an2 = { name: "parrot", legs: 2, wings: 2 }
 
 //types in arrays ✅
 //just use [] after the array's type
@@ -65,16 +65,16 @@ let petTypes: string[] = ["cat", "dog"];
 let nums: number[] = [123, 45, 645, 1, 2]
 
 let animals: Animal[] = [
-    { name: "cat", legs: 4},
+    { name: "cat", legs: 4 },
     { name: "bat", legs: 4, wings: 2 }
 ]
 
 //this is also correct ✅
-let alsoAnimals: Animal[] = [an1,an2]
+let alsoAnimals: Animal[] = [an1, an2]
 
 //this is also correct ✅
-let alsoAnimals2 : Array<Animal> =  [
-    { name: "cat", legs: 4},
+let alsoAnimals2: Array<Animal> = [
+    { name: "cat", legs: 4 },
     { name: "bat", legs: 4, wings: 2 }
 ]
 
@@ -96,3 +96,20 @@ type empCode = string | number;  //can be string or number
 let empId: empCode = 12345;
 let empId2: empCode = "A1234";
 //this is useful with keyword 'typeof' to check the type at runtime
+
+//function return types ✅
+type User = { username: string, role: UserRole }
+
+let users: User[] = [
+    { username: "cat", role: "admin" },
+    { username: "rat", role: "moderator" }
+]
+
+//ex, this functions return value must be a type of User, cant be like > foundUser.username...etc
+function fetchUserData(givenUN: string): User {
+    let foundUser = users.find(u => u.username === givenUN);
+    if (!foundUser) {
+        throw new Error("given user not found")
+    }
+    return foundUser;
+}
