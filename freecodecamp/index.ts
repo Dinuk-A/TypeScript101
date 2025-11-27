@@ -80,4 +80,13 @@ let alsoAnimals2 : Array<Animal> =  [
 
 console.log(alsoAnimals[1].name);
 
+//literal types ✅
+let name2 = "bob";   //when hover over this is from the type string
+const myname3 = "bob";  //this' type is shown as bob, the actual value type, because usage of const
 
+//same can be done with var and lets too
+let myName4: "bob" = "bob";   //now this MUST have a value of "bob", cant even change the case(Bob)
+
+//unions ✅
+type UserRole = "guest" | "admin" | "moderator";  //can only have one of these 3 values
+let userRole: UserRole = "admin";   //this never can be any other value except these 3
