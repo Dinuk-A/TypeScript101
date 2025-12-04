@@ -124,3 +124,26 @@ function logMessage(msg: string): void {
     console.log("Log msg: " + msg);
     //no return value
 }
+
+// Utility types ✅
+// they take other types as a parameter and return a new type, with some changes made to it
+// goal is to perform commonly needed modifications to existing TS types
+// use "Generics" syntax with '<>'s
+// many utility types > Partial, Required, Omit, Pick, Record, etc
+
+// Partial Utility type ✅
+// one of many utility types
+// modifies the existing types by turning all of their properties into optional ones
+type Human = {
+    name: string,
+    age: number
+}
+
+type Ghost = Partial<Human>
+
+//  Omit type ✅
+// takes in a type AND a string (or a union of strings) of property names and return a -
+// - new type with those properties removed
+type HumanWithoutAge = Omit<Human, "age">;
+let hwa: HumanWithoutAge = { name: "Alice" };
+
