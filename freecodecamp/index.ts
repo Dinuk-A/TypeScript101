@@ -141,9 +141,29 @@ type Human = {
 
 type Ghost = Partial<Human>
 
-//  Omit type ✅
+//  Omit Utility type ✅
 // takes in a type AND a string (or a union of strings) of property names and return a -
 // - new type with those properties removed
 type HumanWithoutAge = Omit<Human, "age">;
 let hwa: HumanWithoutAge = { name: "Alice" };
+
+// Generics Utility type ✅
+// to add some flexibility for existing functions, types...acts like fn params but for types
+// placeholders for whatever the type gonna be
+// also uses <>s
+function getFirstElement<T>(arr: T[]): T {
+    // the 'T' is a placeholder for whatever the type gonna be, can be any word 
+    return arr[0];
+}
+
+// hover over each of fns below to see actual types of function parameters
+let numbers = [1, 2, 3];
+let firstNum = getFirstElement(numbers); // firstNum is inferred as number
+
+let strings = ["a", "b", "c"];
+let firstString = getFirstElement(strings); // firstString is inferred as string
+
+type Car = { make: string, model: string };
+let cars: Car[] = [{ make: "Toyota", model: "Camry" }, { make: "Honda", model: "Civic" }];
+let firstCar = getFirstElement(cars); // firstCar is inferred as Car
 
