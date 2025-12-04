@@ -167,3 +167,8 @@ type Car = { make: string, model: string };
 let cars: Car[] = [{ make: "Toyota", model: "Camry" }, { make: "Honda", model: "Civic" }];
 let firstCar = getFirstElement(cars); // firstCar is inferred as Car
 
+// add the generic type to the function call (EXPLICIT)
+let firstStringExplicit = getFirstElement<string>(strings); // firstStringExplicit is explicitly set to string
+let firstNumExplicit = getFirstElement<number>(numbers); // firstNumExplicit is explicitly set to number
+
+
